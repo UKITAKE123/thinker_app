@@ -1,0 +1,23 @@
+h1 ノート一覧
+
+= link_to '新規作成', new_note_path, class: 'btn btn-primary'
+
+= link_to '新規作成', new_note_path, class: 'btn btn-primary'
+
+.col-md-4
+table.table.table-hover 
+  thead.thead-dark
+    tr
+      th= Note.human_attribute_name(:title)
+      th= Note.human_attribute_name(:maintag)
+      th= Note.human_attribute_name(:created_at)
+      th
+  tbody
+    - @notes.each do |note|
+      tr
+        td= link_to note.title, note
+        td= note.maintag
+        td= note.created_at
+        td
+          = link_to '編集', edit_note_path(note), class: 'btn btn-primary mx-auto'
+          = link_to '削除', note, method: :delete, data: { confirm: "ノート[#{note.title}]を削除します。よろしいですか？" }, class: 'btn btn-danger'

@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      note: ノート
+      user: ユーザー
+  attributes:
+    note:
+    title: タイトル
+    content: 内容
+    maintag: メインタグ
+    subtag1: サブタグ１
+    subtag2: サブタグ２

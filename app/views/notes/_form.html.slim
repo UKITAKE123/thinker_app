@@ -1,0 +1,17 @@
+= form_with model: note, local: true do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :content
+    = f.text_area :content, class: 'form-control input-lg'
+  .form-group
+    = f.label :maintag
+    = f.text_field :maintag, class: 'form-control'
+  .form-group
+    = f.label :subtag1
+    = f.text_field :subtag1, class: 'form-control'
+  .form-group
+    = f.label :subtag2
+    = f.text_field :subtag2, class: 'form-control'
+  = f.submit nil, class: 'btn btn-primary'

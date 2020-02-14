@@ -1,0 +1,28 @@
+h1 ノートの詳細
+
+table.table.table-hover
+  tbody
+    tr
+      th= Note.human_attribute_name(:title)
+      td= @note.title
+    tr
+      th= Note.human_attribute_name(:content)
+      td= simple_format(h(@note.content), {}, sanitize: false, wrapper_tag: "div")
+    tr
+      th= Note.human_attribute_name(:maintag)
+      td= @note.maintag
+    tr
+      th= Note.human_attribute_name(:subtag1)
+      td= @note.subtag1
+    tr
+      th= Note.human_attribute_name(:subtag2)
+      td= @note.subtag2
+    tr
+      th= Note.human_attribute_name(:created_at)
+      td= @note.created_at
+    tr
+      th= Note.human_attribute_name(:updated_at)
+      td= @note.updated_at
+
+= link_to '編集', edit_note_path, class: 'btn btn-primary mx-auto'
+= link_to '削除', note, method: :delete, data: { confirm: "ノート[#{note.title}]を削除します。よろしいですか？" }, class: 'btn btn-danger'
