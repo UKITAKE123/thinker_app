@@ -12,9 +12,13 @@ class NotesController < ApplicationController
   end
 
   def create
-    note = Note.new(note_params)
-    note.save!
-    redirect_to notes_url, notice: "ノート[#{note.title}]を登録しました。"
+    @note = Note.new(note_params)
+
+    if @note.save
+      redirect_to @note, notice: "ノート「#{@note.title}」を登録しました。"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -24,13 +28,13 @@ class NotesController < ApplicationController
   def update
     note = Note.find(params[:id])
     note.update!(note_params)
-    redirect_to notes_url, notice: "ノート[#{note.title}]を更新しました。"
+    redirect_to notes_url, notice: "ノート「#{note.title}」を更新しました。"
   end
 
   def destroy
     note = Note.find(params[:id])
     note.destroy
-    redirect_to notes_url, notice: "ノート[#{note.title}]を削除しました。"
+    redirect_to notes_url, notice: "ノート「#{note.title}」を削除しました。"
   end
 
   private
@@ -38,5 +42,4 @@ class NotesController < ApplicationController
   def note_params
     params.require(:note).permit(:title, :content, :maintag, :subtag1, :subtag2)
   end
-
 end

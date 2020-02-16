@@ -2,16 +2,16 @@ doctype html
 html
   head
     title
-      | Thinker_app
+      | THINKER
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    .app-title.navbar.navbar-expand-md.navbar-light.bg-success
-      .navbar-brand THINKTR
+    = render partial: 'layouts/header'
     .container
       - if flash.notice.present?
         .alert.alert-success= flash.notice
       = yield
+    = render partial: 'layouts/footer'

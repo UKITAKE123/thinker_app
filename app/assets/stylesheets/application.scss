@@ -5,6 +5,42 @@ h1 {
   margin: 30px;
 }
 
-a {
+h2 {
   margin: 30px;
 }
+
+a {
+  margin: 15px;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* footer */
+
+.footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+/*  
+.footer a {
+  color: grey;
+  font-size: 14px;
+}
+  
+footer a:hover {
+  color: #222;
+}
+  
+footer ul {
+  float: right;
+  list-style: none;
+}
+  
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}*/

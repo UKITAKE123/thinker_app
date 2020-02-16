@@ -25,4 +25,4 @@ table.table.table-hover
       td= @note.updated_at
 
 = link_to '編集', edit_note_path, class: 'btn btn-primary mx-auto'
-= link_to '削除', note, method: :delete, data: { confirm: "ノート[#{note.title}]を削除します。よろしいですか？" }, class: 'btn btn-danger'
+= link_to '削除', @note, method: :delete, data: { confirm: "ノート[#{@note.title}]を削除します。よろしいですか？" }, class: 'btn btn-danger'

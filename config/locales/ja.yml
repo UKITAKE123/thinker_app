@@ -10,3 +10,15 @@ ja:
     maintag: メインタグ
     subtag1: サブタグ１
     subtag2: サブタグ２
+    created_at: 登録日時
+    updated_at: 更新日時
+    user:
+    name: 名前
+    email: メールアドレス
+    admin: 管理者権限
+    age: 年齢
+    sex: 性別
+    password: パスワード
+    password_confirmation: パスワード確認
+    created_at: 登録日時
+    updated_at: 更新日時
