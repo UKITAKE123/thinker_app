@@ -1,4 +1,7 @@
-
+- if note.errors.present?
+  ul#error_explanation
+    - note.errors.full_messages.each do |message|
+      li = message
 
 = form_with model: note, local: true do |f|
   .form-group

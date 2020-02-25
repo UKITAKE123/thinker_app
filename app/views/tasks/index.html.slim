@@ -1,0 +1,36 @@
+h1 タスク一覧
+
+= search_form_for @q, class: 'my-5' do |f|
+  .form-group.row
+    = f.label :name_or_content, 'KEYWORD', class:'col-sm-1 col-form-label'
+    .col-sm-6
+      = f.search_field :name_or_content_cont, class: 'form-control', placeholder: 'NAME or CONTENT'
+    .form-group
+      = f.submit class: 'btn btn-outline-primary'
+
+.mb-4
+= paginate @tasks
+= page_entries_info @tasks
+
+.col-md-4
+table.table.table-hover 
+  thead.thead-dark
+    tr
+      th= Task.human_attribute_name(:name)
+      th= Task.human_attribute_name(:content)
+      th= Task.human_attribute_name(:created_at)
+      th
+  tbody
+    - @tasks.each do |task|
+      tr
+        td= link_to task.name, task
+        td= task.content
+        td= task.created_at
+        td
+          = link_to '編集', edit_note_path(task), class: 'btn btn-outline-primary mx-auto'
+          = link_to '削除', task, method: :delete, data: { confirm: "タスク[「#{task.name}」を削除します。よろしいですか？" }, class: 'btn btn-outline-danger'
+
+= link_to 'CSV出力', tasks_path(format: :csv), class: 'btn btn-outline-primary'
+
+= link_to 'ノート作成', new_note_path, class: 'btn btn-primary'
+= link_to 'タスク作成', new_task_path, class: 'btn btn-primary'

@@ -1,0 +1,19 @@
+h1 タスクの詳細
+
+table.table.table-hover
+  tbody
+    tr
+      th= Task.human_attribute_name(:name)
+      td= @task.name
+    tr
+      th= Task.human_attribute_name(:content)
+      td= simple_format(h(@task.content), {}, sanitize: false, wrapper_tag: "div")
+    tr
+      th= Task.human_attribute_name(:created_at)
+      td= @task.created_at
+    tr
+      th= Task.human_attribute_name(:updated_at)
+      td= @task.updated_at
+
+= link_to '編集', edit_task_path, class: 'btn btn-primary mx-auto'
+= link_to '削除', @task, method: :delete, data: { confirm: "ノート「#{@task.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'

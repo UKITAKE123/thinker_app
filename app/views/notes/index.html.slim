@@ -1,12 +1,22 @@
 h1 ノート一覧
 
+= search_form_for @q, class: 'my-5' do |f|
+  .form-group.row
+    = f.label :title_or_maintag, 'KEYWORD', class:'col-sm-1 col-form-label'
+    .col-sm-6
+      = f.search_field :title_or_maintag_cont, class: 'form-control', placeholder: 'TITLE or MAINTAG'
+    .form-group
+      = f.submit class: 'btn btn-outline-primary'
+.mb-4
+= paginate @notes
+= page_entries_info @notes
 
 .col-md-4
 table.table.table-hover 
   thead.thead-dark
     tr
-      th= Note.human_attribute_name(:title)
-      th= Note.human_attribute_name(:maintag)
+      th= sort_link(@q, :title)
+      th= sort_link(@q, :maintag)
       th= Note.human_attribute_name(:created_at)
       th
   tbody
@@ -16,8 +26,10 @@ table.table.table-hover
         td= note.maintag
         td= note.created_at
         td
-          = link_to '編集', edit_note_path(note), class: 'btn btn-primary mx-auto'
-          = link_to '削除', note, method: :delete, data: { confirm: "ノート[#{note.title}]を削除します。よろしいですか？" }, class: 'btn btn-danger'
+          = link_to '編集', edit_note_path(note), class: 'btn btn-outline-primary mx-auto'
+          = link_to '削除', note, method: :delete, data: { confirm: "ノート[#{note.title}]を削除します。よろしいですか？" }, class: 'btn btn-outline-danger'
+
+= link_to 'CSV出力', notes_path(format: :csv), class: 'btn btn-outline-primary'
 
 = link_to 'ノート作成', new_note_path, class: 'btn btn-primary'
-= link_to 'タスク作成', new_note_path, class: 'btn btn-primary'        
+= link_to 'タスク作成', new_task_path, class: 'btn btn-primary'

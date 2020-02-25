@@ -1,46 +1,110 @@
-/*@import "bootstrap-sprockets";*/
+/*@import "bootstrap-sprockets"; */
 @import "bootstrap";
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+  background-color: #f7f7f7;
+}
+
 h1 {
+  font-family: sans-serif;
   margin: 30px;
+  font-size: 30px;
 }
 
 h2 {
   margin: 30px;
+  font-size: 25px;
 }
 
 a {
   margin: 15px;
+  font-size: 18px;
+}
+
+a.sort_link {
+  color: #ffffff;
+}
+
+a.nav-link {
+  margin: 15px;
+  font-size: 15px;
 }
 
 .table td {
   vertical-align: middle;
+  background-color: white;
+}
+.table th {
+  background-color: white;
+}
+
+.header {
+  height: 100;
+}
+
+.container {
+  height: 1400px;
+}
+
+.about1, .about2, .about3, .about4{
+  margin: 30px;
+  border-top: 1px solid;
+  background-color: white;
+}
+
+.panel-body {
+  font-size: 20px;
+  font-weight: lighter;
+}
+h2.panel-title {
+  background-color: white;
+}
+
+.top-inquiry {
+  margin: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.second-inquiry {
+  color: red;
+  font-size: 40px;
+}
+
+.news {
+  text-align: center;
+}
+
+img {
+  width: 800px;
+  height: 300px;
+  margin: 10px;
+}
+
+p {
+  font-size: 20px;
+}
+#error_explanation {
+  color: red;
+  list-style: none;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  color: red;
 }
 
 /* footer */
 
 .footer {
+  height: 150px;
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
+  background-color: #28a745;
+  color: rgba(0, 0, 0, 0.9);
 }
-/*  
-.footer a {
-  color: grey;
-  font-size: 14px;
-}
-  
-footer a:hover {
-  color: #222;
-}
-  
-footer ul {
-  float: right;
-  list-style: none;
-}
-  
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}*/

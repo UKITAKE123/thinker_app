@@ -1,8 +1,9 @@
 ja:
   activerecord:
     models:
-      note: ノート
-      user: ユーザー
+      notes: ノート
+      users: ユーザー
+      tasks: タスク
   attributes:
     note:
     title: タイトル
@@ -22,3 +23,10 @@ ja:
     password_confirmation: パスワード確認
     created_at: 登録日時
     updated_at: 更新日時
+    user/tasks: 
+    name: 名前
+    task:
+      name: タスク
+      content: 詳細
+      created_at: 登録日時
+      updated_at: 更新日時

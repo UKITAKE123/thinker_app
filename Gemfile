@@ -70,4 +70,9 @@ gem 'jquery-rails'
 
 gem 'rails-i18n'
 
+gem 'ransack'
+
+gem 'kaminari'
+
+
 #gem 'coffee-script-source', '1.8.0'
