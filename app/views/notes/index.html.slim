@@ -2,11 +2,12 @@ h1 ノート一覧
 
 = search_form_for @q, class: 'my-5' do |f|
   .form-group.row
-    = f.label :title_or_maintag, 'KEYWORD', class:'col-sm-1 col-form-label'
-    .col-sm-6
+    = f.label :title_or_maintag, 'KEYWORD', class:'col-sm-3 col-form-label'
+    .col-sm-5
       = f.search_field :title_or_maintag_cont, class: 'form-control', placeholder: 'TITLE or MAINTAG'
     .form-group
       = f.submit class: 'btn btn-outline-primary'
+
 .mb-4
 = paginate @notes
 = page_entries_info @notes
