@@ -1,6 +1,7 @@
-.footer.navbar.navbar-expand-md.navbar-light
-  | ©2020 THINKER
+.footer.navbar.navbar-expand-md.navbar-light.bg-light
+  .copyright
+  |  ©2020 THINKER <br>
   ul.navbar-nav.ml-auto
-    li.nav-item= link_to 'THINKERについて', about_path, class: 'nav-link'
-    li.nav-item= link_to 'お問い合わせ', inquiry_path, class: 'nav-link'
-    li.nav-item= link_to 'お知らせ', news_path, class: 'nav-link'
+    li.nav-item= link_to 'About', about_path, class: 'nav-link'
+    li.nav-item= link_to 'Contact', inquiry_path, class: 'nav-link'
+    li.nav-item= link_to 'News', news_path, class: 'nav-link'

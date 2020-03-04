@@ -1,14 +1,15 @@
-.app-title.navbar.navbar-expand-md.navbar-light.bg-success
+.app-title.navbar.navbar-expand-md.navbar-dark.bg-secondary
   .navbar-brand THINKER
 
-  ul.navbar-nav.ml-auto
-    .row
-      - if current_user
-        li.nav-item= link_to 'ノート一覧', notes_path, class: 'nav-link'
-        li.nav-item= link_to 'タスク一覧', tasks_path, class: 'nav-link'
-        - if current_user.admin?
-          li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
-        li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
-      - else
-        li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
-      li.nav-item= link_to 'THINKERについて', about_path, class: 'nav-link'
+  .justify-content-center
+    ul.navbar-nav.ml-auto
+      .row
+        - if current_user
+          li.nav-item= link_to 'Note', notes_path, class: 'nav-link'
+          li.nav-item= link_to 'Task', tasks_path, class: 'nav-link'
+          - if current_user.admin?
+            li.nav-item= link_to 'User', admin_users_path, class: 'nav-link'
+          li.nav-item= link_to 'Logout', logout_path, method: :delete, class: 'nav-link'
+        - else
+          li.nav-item= link_to 'Login', login_path, class: 'nav-link'
+        li.nav-item= link_to 'About', about_path, class: 'nav-link'
