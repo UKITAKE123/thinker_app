@@ -19,8 +19,8 @@ h2 {
 }
 
 a {
-  margin: 15px;
-  font-size: 18px;
+  margin: 5px;
+  font-size: 15px;
 }
 
 a.sort_link {
@@ -35,10 +35,12 @@ a.nav-link {
 }
 
 .table td {
+  padding: 0;
   vertical-align: middle;
   background-color: white;
 }
 .table th {
+  padding: 0;
   background-color: white;
 }
 

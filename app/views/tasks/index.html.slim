@@ -2,7 +2,7 @@ h1 タスク一覧
 
 = search_form_for @q, class: 'my-5' do |f|
   .form-group.row
-    = f.label :name_or_content, 'KEYWORD', class:'col-sm-3 col-form-label'
+    = f.label :name_or_content, 'KEYWORD', class:'col-sm-2 col-form-label'
     .col-sm-5
       = f.search_field :name_or_content_cont, class: 'form-control', placeholder: 'NAME or CONTENT'
     .form-group
