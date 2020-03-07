@@ -1,10 +1,18 @@
 h1 ログイン
+h2 下記ボタンよりテストユーザーでログインすることができます
 
 = form_with scope: :session, local: true do |f|
-  .form-group.row
-    = f.label :email, 'メールアドレス', class: 'col-sm-3'
+    = f.hidden_field :email, value: 'test@test.com'
+    = f.hidden_field :password, value: 'test'
+    .form-group.row
+      = f.submit 'テストユーザーログインはこちら', class: 'btn btn-warning'
+
+
+= form_with scope: :session, local: true do |f|
+  .form-group.input
+    = f.label :email, 'メールアドレス', class: 'session_email col-sm-3'
     = f.text_field :email, class: 'form-control', id: 'session_email'
-  .form-group.row
-    = f.label :password, 'パスワード', class: 'col-sm-3'
+  .form-group.input
+    = f.label :password, 'パスワード', class: 'session_password col-sm-3'
     = f.password_field :password, class: 'form-control', id: 'session_password'
-  = f.submit 'ログインする', class: 'btn btn-primary'
+    = f.submit 'ログインする', class: 'session_submit btn btn-primary'
