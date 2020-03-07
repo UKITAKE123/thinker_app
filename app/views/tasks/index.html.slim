@@ -27,7 +27,7 @@ table.table.table-hover
         td= task.content
         td= task.created_at
         td
-          = link_to '編集', edit_note_path(task), class: 'btn btn-outline-primary mx-auto'
+          = link_to '編集', edit_task_path(task), class: 'btn btn-outline-primary mx-auto'
           = link_to '削除', task, method: :delete, data: { confirm: "タスク[「#{task.name}」を削除します。よろしいですか？" }, class: 'btn btn-outline-danger'
 
 = link_to 'CSV出力', tasks_path(format: :csv), class: 'btn btn-outline-primary'
